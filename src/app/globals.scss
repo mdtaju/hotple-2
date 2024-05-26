@@ -21,6 +21,11 @@ $darkText: #cbd5e0;
 //   }
 // }
 
+:root {
+  /* Initially set to 1vh */
+  --vh: 1vh;
+}
+
 body {
   background: white;
 }

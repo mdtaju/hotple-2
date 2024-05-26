@@ -102,7 +102,8 @@ export default function Card({ item }: { item: listsDataTypes }) {
                 "& .MuiDialog-container": {
                   "& .MuiPaper-root": {
                     minWidth: "100%",
-                    minHeight: "100vh",
+                    // minHeight: "100vh",
+                    minHeight: "calc(var(--vh, 1vh) * 100)",
                   },
                 },
               }
