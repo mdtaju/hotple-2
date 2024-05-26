@@ -136,7 +136,28 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  button {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    transition: all ease 0.1s;
+    border-radius: 9999px;
+    &:hover {
+      background: $lightGray;
+    }
+  }
 }
+.dark {
+  .mobile_search_menu_container {
+    button {
+      &:hover {
+        background: #181818;
+      }
+    }
+  }
+}
+
 @media (min-width: 768px) {
   .mobile_search_menu_container {
     display: none;
@@ -219,14 +240,20 @@
   display: block;
   button {
     padding: 0.5rem;
-    background-color: $lightGray;
     border-radius: 9999px;
+    color: $lightText;
+    &:hover {
+      background-color: $lightGray;
+    }
   }
 }
 
 .dark .mobile_search_menu_container_02 {
   button {
-    background-color: $darkSecondary;
+    color: $darkText;
+    &:hover {
+      background-color: $darkSecondary;
+    }
   }
 }
 @media (min-width: 768px) {

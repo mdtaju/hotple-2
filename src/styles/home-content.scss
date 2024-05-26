@@ -5,6 +5,8 @@
   margin-right: auto;
   display: flex;
   align-items: flex-start;
+  position: relative;
+  // max-height: calc(100vh - 150px);
 }
 
 .home_hero_content_main_container {
@@ -12,6 +14,8 @@
   margin-right: 0;
   margin-left: auto;
   min-height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
 @media (min-width: 768px) {
   .home_hero_content_main_container {
@@ -24,7 +28,8 @@
   width: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
-  margin-top: 1rem;
+  // padding-top: 1rem;
+  position: relative;
 }
 @media (min-width: 768px) {
   .home_content_main_container {
@@ -38,11 +43,18 @@
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
+  white-space: nowrap;
+  position: fixed;
+  // top: 0;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  background: white;
 }
-@media (min-width: 640px) {
+.dark {
   .top_menu_container_01 {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    background: $darkThemeColor;
   }
 }
 .top_menu_inner_container_01 {
@@ -514,9 +526,9 @@
 
 .content_details_view_container {
   width: 100%;
-  height: calc(100vh - 48px);
+  height: 100vh;
   background: white;
-  border-radius: 16px;
+  border-radius: 0px;
   display: flex;
   flex-direction: column;
   overflow: scroll;
@@ -705,10 +717,12 @@
 @media (min-width: 830px) {
   .content_details_view_container {
     width: 800px;
+    height: calc(100vh - 48px);
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     overflow: hidden;
+    border-radius: 16px;
     .content_dialog_img_container {
       width: 50%;
       height: 100%;
@@ -901,6 +915,55 @@
     color: rgb(133, 133, 133);
     &:hover {
       background: $darkSecondary;
+    }
+  }
+}
+
+.bottom_menu_options_container {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  .bottom_menu_options_inner_container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    button {
+      width: 38px;
+      height: 38px;
+      border-radius: 9999px;
+      display: grid;
+      place-items: center;
+      background: white;
+      border: 1px solid $lightGray;
+      color: $lightText;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .bottom_menu_options_container {
+    bottom: 30px;
+    right: 30px;
+  }
+}
+
+.MuiTooltip-tooltip {
+  background-color: white !important;
+  color: $lightText !important;
+}
+
+.dark {
+  .MuiTooltip-tooltip {
+    background-color: #181818 !important;
+    color: $darkText !important;
+  }
+  .bottom_menu_options_container {
+    .bottom_menu_options_inner_container {
+      button {
+        background: #181818;
+        border: 1px solid $darkSecondary;
+        color: $darkText;
+      }
     }
   }
 }

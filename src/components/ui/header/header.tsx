@@ -60,7 +60,7 @@ export default function Header() {
         <div className="mobile_search_menu_container">
           {!searchActive && (
             <>
-              <button onClick={searchActiveHandler} style={{ padding: "8px" }}>
+              <button onClick={searchActiveHandler}>
                 <CiSearch className="custom-size-icon" />
               </button>
               <MenuMobile />

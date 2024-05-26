@@ -1,5 +1,4 @@
 "use client";
-
 import BottomMenuMobile from "../ui/bottom-menu/bottom-menu-mobile";
 import ContentBody from "./content-body";
 import TopMenu from "./top-menu";

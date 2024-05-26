@@ -16,9 +16,23 @@ import { RiShareBoxLine } from "react-icons/ri";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { RiCloseFill } from "react-icons/ri";
 import Link from "next/link";
+import { useMediaQuery } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
 
 export default function Card({ item }: { item: listsDataTypes }) {
+  const muiTheme = createTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 600,
+        md: 830, // Customized md breakpoint
+        lg: 1280,
+        xl: 1920,
+      },
+    },
+  });
   const { theme } = useTheme();
+  const isSmallScreen = useMediaQuery(muiTheme.breakpoints.down("md"));
   const anchorRef = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
   const [backDropColor, setBackDropColor] = useState(
@@ -75,36 +89,36 @@ export default function Card({ item }: { item: listsDataTypes }) {
       </div>
       {/* {!isSmallScreen && ( */}
       <Dialog
+        fullScreen={!isSmallScreen}
         BackdropComponent={Backdrop}
         BackdropProps={{
           sx: {
             backgroundColor: backDropColor, // Change the color as needed
-            // backdropFilter: "blur(2px)", // Optional: Apply additional styles like blur
           },
         }}
-        sx={{
-          "& .MuiDialog-container": {
-            "& .MuiPaper-root": {
-              width: "100%",
-              maxWidth: "800px", // Set your width here
-              height: "calc(100vh - 48px)",
-              borderRadius: "16px",
-            },
-          },
-        }}
+        sx={
+          isSmallScreen
+            ? {
+                "& .MuiDialog-container": {
+                  "& .MuiPaper-root": {
+                    minWidth: "100%",
+                    minHeight: "100vh",
+                  },
+                },
+              }
+            : {
+                "& .MuiDialog-container": {
+                  "& .MuiPaper-root": {
+                    width: "100%",
+                    maxWidth: "800px", // Set your width here
+                    height: "calc(100vh - 48px)",
+                    borderRadius: "16px",
+                  },
+                },
+              }
+        }
         open={open}
         onClose={handleClose}
-        // PaperProps={{
-        //   style: {
-        //     position: "absolute",
-        //     top: dialogPosition.top,
-        //     left: dialogPosition.left,
-        //     transformOrigin: "top left",
-        //     animation: `${
-        //       open ? "dialogOpen" : "dialogClose"
-        //     } 0.3s forwards`,
-        //   },
-        // }}
         PaperProps={{
           style: {
             animation: `${open ? "dialogOpen" : "dialogClose"} 0.3s forwards`,

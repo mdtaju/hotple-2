@@ -5,7 +5,7 @@ import Card from "../ui/card/card";
 // grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
 export default function ContentBody() {
   return (
-    <div className="w-full" style={{ marginTop: "1rem" }}>
+    <div style={{ paddingTop: "75px" }}>
       {/* <div className="w-fit mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 2xl:columns-5 gap-x-2 gap-y-4 px-0 sm:px-4"> */}
       <ResponsiveMasonry
         columnsCountBreakPoints={{
