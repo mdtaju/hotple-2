@@ -489,12 +489,12 @@ export default function Card({ item }: { item: listsDataTypes }) {
                   <FaRegStar style={{ width: "22px", height: "22px" }} />
                   <span>1k+</span>
                 </div>
-                {/* comments */}
+                {/* comment */}
                 <div className="content_footer_react">
                   <FaRegComment style={{ width: "22px", height: "22px" }} />
                   <span>1k+</span>
                 </div>
-                {/* comments */}
+                {/* share */}
                 <div className="content_footer_react">
                   <RiShareBoxLine style={{ width: "22px", height: "22px" }} />
                 </div>
