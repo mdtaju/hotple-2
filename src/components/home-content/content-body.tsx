@@ -5,7 +5,7 @@ import Card from "../ui/card/card";
 // grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5
 export default function ContentBody() {
   return (
-    <div style={{ paddingTop: "75px" }}>
+    <div>
       {/* <div className="w-fit mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 2xl:columns-5 gap-x-2 gap-y-4 px-0 sm:px-4"> */}
       <ResponsiveMasonry
         columnsCountBreakPoints={{
@@ -16,7 +16,7 @@ export default function ContentBody() {
           1124: 4,
           1440: 5,
         }}>
-        <Masonry gutter="10px">
+        <Masonry gutter="20px">
           {dataArray.map((item, i) => (
             <Card key={i} item={item} />
           ))}

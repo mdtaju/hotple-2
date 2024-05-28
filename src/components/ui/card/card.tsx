@@ -491,7 +491,7 @@ export default function Card({ item }: { item: listsDataTypes }) {
                   <FaRegCircleUser
                     style={{ minWidth: "16px", minHeight: "16px" }}
                   />
-                  <span>댓글을 달려면 로그인하세요</span>
+                  <span>댓글</span>
                 </div>
                 {/* reacts */}
                 {/* likes */}
@@ -523,7 +523,7 @@ export default function Card({ item }: { item: listsDataTypes }) {
                 <FaRegCircleUser
                   style={{ minWidth: "16px", minHeight: "16px" }}
                 />
-                <span>댓글을 달려면 로그인하세요</span>
+                <span>댓글</span>
               </div>
               {/* reacts */}
               {/* likes */}

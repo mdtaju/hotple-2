@@ -17,14 +17,16 @@ export default function Header() {
       <div className="header_inner_container">
         {/* logo and search container */}
         {!searchActive && (
-          <div className="logo_and_search_container">
-            {/* logo */}
-            <div className="logo_container">Logo</div>
+          <>
+            <div className="logo_and_search_container">
+              {/* logo */}
+              <div className="logo_container">Logo</div>
+            </div>
             {/* search */}
             <div className="search_container">
               <Search />
             </div>
-          </div>
+          </>
         )}
         {/* mobile search input start */}
         {searchActive && (

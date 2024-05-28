@@ -55,3 +55,15 @@ p {
   box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.08), 0 1px 4px 0 rgba(0, 0, 0, 0.04),
     0 0 0 1px hsla(0, 0%, 100%, 0.06) inset !important;
 }
+// slick-slide slick-active slick-current
+.slick-slider,
+.slick-list,
+.slick-track,
+.slick-slide {
+  // width: 100% !important;
+  height: 100% !important;
+}
+
+// .slick-slider {
+//   height: 100%;
+// }
