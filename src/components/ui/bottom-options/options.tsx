@@ -36,18 +36,18 @@ export default function BottomOptions() {
     <div className="bottom_menu_options_container">
       <div className="bottom_menu_options_inner_container">
         <Tooltip title="사진과 텍스트만 보기" placement="left">
-          <button onClick={scrollToTop}>
+          <div onClick={scrollToTop}>
             {isVisible ? (
               <BsArrowUp style={{ width: "20px", height: "20px" }} />
             ) : (
               <AiOutlinePicture style={{ width: "20px", height: "20px" }} />
             )}
-          </button>
+          </div>
         </Tooltip>
         <Tooltip title="새로 고치다" placement="left">
-          <button>
+          <div>
             <RiRefreshLine style={{ width: "20px", height: "20px" }} />
-          </button>
+          </div>
         </Tooltip>
       </div>
     </div>

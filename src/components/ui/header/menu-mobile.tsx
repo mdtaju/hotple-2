@@ -27,9 +27,9 @@ export default function MenuMobile() {
   return (
     <>
       <div className="mobile_search_menu_container_02">
-        <button ref={anchorRef} onClick={handleClick}>
+        <div ref={anchorRef} onClick={handleClick}>
           <HiOutlineMenu className="custom-size-icon" />
-        </button>
+        </div>
       </div>
 
       {/* popover */}

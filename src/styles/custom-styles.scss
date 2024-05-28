@@ -237,10 +237,11 @@
 
 .mobile_search_menu_container_02 {
   display: block;
-  button {
+  div {
     padding: 0.5rem;
     border-radius: 9999px;
     color: $lightText;
+    cursor: pointer;
     &:hover {
       background-color: $lightGray;
     }
@@ -248,7 +249,7 @@
 }
 
 .dark .mobile_search_menu_container_02 {
-  button {
+  div {
     color: $darkText;
     &:hover {
       background-color: $darkSecondary;

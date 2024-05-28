@@ -77,14 +77,25 @@ export default function Card({ item }: { item: listsDataTypes }) {
           style={{ padding: "0.5rem", paddingBottom: "0px" }}
           className="home_content_info_container">
           <h2>{item.title}</h2>
-          {item.inclusions.length !== 0 && (
-            <div className="content_info_inclusions">
-              {item.inclusions.map((inc, i) => (
-                <span key={i}>✔ {inc}</span>
-              ))}
+          <div className="content_info_inclusions">
+            {/* profile sec */}
+            <div className="list_profile_container">
+              <div
+                style={{ width: "20px", height: "20px", position: "relative" }}>
+                <Image
+                  src={ReplyImg}
+                  alt="profile-img"
+                  className="list_profile_img"
+                />
+              </div>
+              <span>이것은 사용자 이름입니다</span>
             </div>
-          )}
-          <p>가격: {item.price}</p>
+            {/* react */}
+            <div className="list_react">
+              <IoMdHeartEmpty style={{ width: "18px", height: "18px" }} />
+              <span>100+</span>
+            </div>
+          </div>
         </div>
       </div>
       {/* {!isSmallScreen && ( */}
@@ -113,6 +124,7 @@ export default function Card({ item }: { item: listsDataTypes }) {
                     width: "100%",
                     maxWidth: "800px", // Set your width here
                     height: "calc(100vh - 48px)",
+                    maxHeight: "600px",
                     borderRadius: "16px",
                   },
                 },
@@ -491,7 +503,7 @@ export default function Card({ item }: { item: listsDataTypes }) {
                   <FaRegCircleUser
                     style={{ minWidth: "16px", minHeight: "16px" }}
                   />
-                  <span>댓글</span>
+                  <span>댓글을 남기려면 로그인하세요.</span>
                 </div>
                 {/* reacts */}
                 {/* likes */}

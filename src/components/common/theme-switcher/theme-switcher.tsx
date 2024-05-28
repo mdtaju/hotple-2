@@ -23,16 +23,16 @@ function ThemeSwitcher() {
 
   return (
     <div className="theme_switcher_container">
-      <button
+      <div
         onClick={changeToLightHandler}
         className={`${theme !== "dark" ? "light_btn_active" : ""}`}>
         <LuSunMedium />
-      </button>
-      <button
+      </div>
+      <div
         onClick={changeToDarkHandler}
         className={`${theme !== "light" ? "light_btn_active" : ""}`}>
         <IoMoonOutline />
-      </button>
+      </div>
     </div>
   );
 }

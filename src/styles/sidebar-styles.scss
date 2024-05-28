@@ -294,12 +294,13 @@
   padding: 0.25rem;
   border-radius: 9999px;
   background-color: #f7fafc;
-  button {
+  div {
     width: 30px;
     height: 30px;
     display: grid;
     place-items: center;
     border-radius: 9999px;
+    cursor: pointer;
   }
 }
 .dark .theme_switcher_container {
