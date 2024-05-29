@@ -24,15 +24,16 @@ export default function Card({ item }: { item: listsDataTypes }) {
     breakpoints: {
       values: {
         xs: 0,
-        sm: 600,
-        md: 830, // Customized md breakpoint
+        sm: 509,
+        md: 865, // Customized md breakpoint
         lg: 1280,
         xl: 1920,
       },
     },
   });
   const { theme } = useTheme();
-  const isSmallScreen = useMediaQuery(muiTheme.breakpoints.down("md"));
+  const isMediumScreen = useMediaQuery(muiTheme.breakpoints.down("md"));
+  const isSmallScreen = useMediaQuery(muiTheme.breakpoints.down("sm"));
   const anchorRef = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
   const [backDropColor, setBackDropColor] = useState(
@@ -98,9 +99,9 @@ export default function Card({ item }: { item: listsDataTypes }) {
           </div>
         </div>
       </div>
-      {/* {!isSmallScreen && ( */}
+      {/* {!isMediumScreen && ( */}
       <Dialog
-        fullScreen={!isSmallScreen}
+        // fullScreen={!isMediumScreen}
         BackdropComponent={Backdrop}
         BackdropProps={{
           sx: {
@@ -108,7 +109,7 @@ export default function Card({ item }: { item: listsDataTypes }) {
           },
         }}
         sx={
-          isSmallScreen
+          isMediumScreen
             ? {
                 "& .MuiDialog-container": {
                   "& .MuiPaper-root": {
@@ -131,7 +132,7 @@ export default function Card({ item }: { item: listsDataTypes }) {
               }
         }
         open={open}
-        onClose={handleClose}
+        onClose={() => handleClose()}
         PaperProps={{
           style: {
             animation: `${open ? "dialogOpen" : "dialogClose"} 0.3s forwards`,
@@ -143,7 +144,9 @@ export default function Card({ item }: { item: listsDataTypes }) {
           {/* header start */}
           <div className="dialog_header header_small_view">
             {/* close btn */}
-            <div onClick={handleClose} className="close_btn_dialog_outer">
+            <div
+              onClick={() => handleClose()}
+              className="close_btn_dialog_outer">
               <RiCloseFill style={{ minWidth: "22px", minHeight: "22px" }} />
             </div>
             <div className="profile_01">
@@ -535,7 +538,9 @@ export default function Card({ item }: { item: listsDataTypes }) {
                 <FaRegCircleUser
                   style={{ minWidth: "16px", minHeight: "16px" }}
                 />
-                <span>댓글</span>
+                <span>
+                  {isSmallScreen ? "댓글" : "댓글을 남기려면 로그인하세요"}
+                </span>
               </div>
               {/* reacts */}
               {/* likes */}
