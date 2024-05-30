@@ -27,13 +27,15 @@ export default function Card({ item }: { item: listsDataTypes }) {
         sm: 509,
         md: 865, // Customized md breakpoint
         lg: 1280,
-        xl: 1920,
+        xl: 1900,
       },
     },
   });
   const { theme } = useTheme();
   const isMediumScreen = useMediaQuery(muiTheme.breakpoints.down("md"));
   const isSmallScreen = useMediaQuery(muiTheme.breakpoints.down("sm"));
+  const isExtraLargeScreen = useMediaQuery(muiTheme.breakpoints.down("xl"));
+
   const anchorRef = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
   const [backDropColor, setBackDropColor] = useState(
@@ -122,10 +124,10 @@ export default function Card({ item }: { item: listsDataTypes }) {
             : {
                 "& .MuiDialog-container": {
                   "& .MuiPaper-root": {
-                    width: "100%",
-                    maxWidth: "800px", // Set your width here
+                    minWidth: "800px", // Set your width here
+                    maxWidth: "calc(100vw - 50px)",
                     height: "calc(100vh - 48px)",
-                    maxHeight: "600px",
+                    maxHeight: "947px",
                     borderRadius: "16px",
                   },
                 },
