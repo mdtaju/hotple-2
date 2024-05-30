@@ -34,7 +34,6 @@ export default function Card({ item }: { item: listsDataTypes }) {
   const { theme } = useTheme();
   const isMediumScreen = useMediaQuery(muiTheme.breakpoints.down("md"));
   const isSmallScreen = useMediaQuery(muiTheme.breakpoints.down("sm"));
-  const isExtraLargeScreen = useMediaQuery(muiTheme.breakpoints.down("xl"));
 
   const anchorRef = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
@@ -173,12 +172,12 @@ export default function Card({ item }: { item: listsDataTypes }) {
           </div>
           {/* image container */}
           <div className="content_dialog_img_container">
-            <Image
+            <img
               src={item.img_url}
               alt={item.title}
-              layout="fill"
-              placeholder="blur"
-              blurDataURL={item.img_url}
+              // layout="fill"
+              // placeholder="blur"
+              // blurDataURL={item.img_url}
               className="content_dialog_img"
             />
           </div>

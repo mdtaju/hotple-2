@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "sns-webpic-qc.xhscdn.com",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
     ],
   },
 };
